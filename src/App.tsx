@@ -29,7 +29,7 @@ function App(): React.JSX.Element {
                             <Button onClick={ () => {console.log("Hello World!")}}>Log Hello World</Button>
                         </Col>
                         <Col style = {{ width: "100px", height: "150px", backgroundColor: "red"}}>
-                        <img src={udelbluehen} alt ="A picture of Udel Bluehen" />
+                            <img src={udelbluehen} alt ="A picture of Udel Bluehen" />
                         </Col>
                     </Row>
                 </Container>
