@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import udelbluehen from "./images/udelbluehen.png";
 import Button from "react-bootstrap/Button";
+import {Container, Row, Col} from "react-bootstrap";
 
 function App(): React.JSX.Element {
     return (
@@ -15,19 +16,24 @@ function App(): React.JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
-            <div className="columns">
-                <div style = {{ width: "100px", height: "150px", backgroundColor: "red"}}></div>
-                <div style = {{ width: "100px", height: "150px", backgroundColor: "red"}}></div>
-                <div style = {{ width: "100px", height: "150px", backgroundColor: "red"}}></div>
-                <ul>
-                    <li>Evan</li>
-                    <li>Fennemores</li>
-                    <li>List</li>
-                </ul>
-                <Button onClick={ () => {console.log("Hello World!")}}>Log Hello World</Button>
-                <img src={udelbluehen} alt ="A picture of Udel Bluehen" />
+                <Container>
+                    <Row>
+                        <Col style = {{ width: "100px", height: "150px", backgroundColor: "red"}}>
+                        <ul>
+                            <li>Evan</li>
+                            <li>Fennemores</li>
+                            <li>List</li>
+                            </ul>
+                        </Col>
+                        <Col style = {{ width: "100px", height: "150px", backgroundColor: "red"}}>
+                            <Button onClick={ () => {console.log("Hello World!")}}>Log Hello World</Button>
+                        </Col>
+                        <Col style = {{ width: "100px", height: "150px", backgroundColor: "red"}}>
+                        <img src={udelbluehen} alt ="A picture of Udel Bluehen" />
+                        </Col>
+                    </Row>
+                </Container>
             </div>
-        </div>
     );
 }
 
