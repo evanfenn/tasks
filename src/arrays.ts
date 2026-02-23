@@ -61,15 +61,7 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    let arr = [];
-    return messages.map((str: string): string => {
-        if (str[str.length - 1] === "!") {
-            arr.push(str.toUpperCase);
-        }
-        else if ( str[str.length - 1] != "!") {
-            arr.push(str);
-        }
-    });
+    return messages.filter((str: string) => !str.endsWith("?").map((str: string: string => str.endsWith("!") ? str.toUpperCase() : str));
 };
 
 /**
@@ -86,7 +78,8 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    return colors.every(color => color === "red" || color === "blue" || color === "green"
+    );
 }
 
 /**
