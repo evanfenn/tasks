@@ -46,16 +46,22 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
-};
+    return amounts.map((str: string): number => {
+        if (str.startsWith("$")) {
+            str = str.slice(1);
+        }
 
+        const parsed = parseInt(str,10);
+        return parsed || 0;
+    });
+}
 /**
  * Consume an array of messages and return a new list of the messages. However, any
  * string that ends in "!" should be made uppercase. Also, remove any strings that end
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    return messages.map(());
 };
 
 /**
