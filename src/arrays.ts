@@ -61,7 +61,7 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return messages.filter((str: string) => !str.endsWith("?").map((str: string: string => str.endsWith("!") ? str.toUpperCase() : str));
+    return messages.filter((str: string) => !str.endsWith("?")).map((str: string) => str.endsWith("!") ? str.toUpperCase() : str);
 };
 
 /**
@@ -90,7 +90,9 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    const sum = addends.reduce((t, n) => t + n, 0);
+    const expression = addends.length === 0 ? "0" : addends.join("+");
+    return sum + "=" + expression;
 }
 
 /**
