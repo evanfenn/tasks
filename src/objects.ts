@@ -30,7 +30,12 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    return false;
+    if (answer.toUpperCase().replace(/\s/g, "") === question.expected.toUpperCase().replace(/\s/g, "")) {
+        return true
+    }
+    else {
+        return false;
+    }
 }
 
 /**
@@ -40,7 +45,12 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    if (question.type === "multiple_choice_question"){
+        return question.options.includes(answer);
+    }
+    else {
+        return false;
+    }
 }
 
 /**
