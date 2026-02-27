@@ -111,7 +111,16 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    return question;
+    return {
+        id: question.id,
+        name: question.name,
+        type: question.type,
+        body: question.body,
+        expected: question.expected,
+        options: question.options,
+        points: question.points,
+        published: !question.published,
+    };
 }
 
 /**
@@ -121,7 +130,16 @@ export function publishQuestion(question: Question): Question {
  * The `published` field should be reset to false.
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
-    return oldQuestion;
+    return {
+        id: id,
+        name: "Copy of " + oldQuestion.name,
+        type: oldQuestion.type,
+        body: oldQuestion.body,
+        expected: oldQuestion.expected,
+        options: oldQuestion.options,
+        points: oldQuestion.points,
+        published: false,
+    };
 }
 
 /**
