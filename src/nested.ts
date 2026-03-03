@@ -80,7 +80,20 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    return "";
+    const headers = "id,name,options,points,published";
+    const rows = questions.map(
+        (question) =>
+            question.id.toString() +
+            "," +
+            question.name.toString() +
+            "," +
+            question.options.length.toString() +
+            "," +
+            question.points.toString() +
+            "," +
+            question.published.toString(),
+    );
+    return [headers, ...rows].join("\n");
 }
 
 /**
