@@ -9,7 +9,7 @@ import {
     renameQuestion,
     publishQuestion,
     addOption,
-<<<<<<< HEAD
+<<<<<< HEAD
     mergeQuestion,
 =======
     mergeQuestion
