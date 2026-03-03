@@ -32,7 +32,7 @@ export function findQuestion(questions: Question[], id: number): Question | null
  * with the given `id`.
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    return questions.filter((question) => question.id != id);
 }
 
 /***
