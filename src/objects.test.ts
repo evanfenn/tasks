@@ -9,11 +9,7 @@ import {
     renameQuestion,
     publishQuestion,
     addOption,
-<<<<<<< HEAD
     mergeQuestion,
-=======
-    mergeQuestion
->>>>>>> upstream/task-state
 } from "./objects";
 import testQuestionData from "./data/questions.json";
 import backupQuestionData from "./data/questions.json";
@@ -22,52 +18,30 @@ import backupQuestionData from "./data/questions.json";
 // Setting up the test data
 
 const { BLANK_QUESTIONS, SIMPLE_QUESTIONS }: Record<string, Question[]> =
-<<<<<<< HEAD
     testQuestionData as Record<string, Question[]>;
 
 const {
     BLANK_QUESTIONS: BACKUP_BLANK_QUESTIONS,
     SIMPLE_QUESTIONS: BACKUP_SIMPLE_QUESTIONS,
-=======
-    // Typecast the test data that we imported to be a record matching
-    //  strings to the question list
-    testQuestionData as Record<string, Question[]>;
-
-// We have backup versions of the data to make sure all changes are immutable
-const {
-    BLANK_QUESTIONS: BACKUP_BLANK_QUESTIONS,
-    SIMPLE_QUESTIONS: BACKUP_SIMPLE_QUESTIONS
->>>>>>> upstream/task-state
 }: Record<string, Question[]> = backupQuestionData as Record<
     string,
     Question[]
 >;
 
-<<<<<<< HEAD
 const [ADDITION_QUESTION, LETTER_QUESTION, COLOR_QUESTION, SHAPE_QUESTION] =
     SIMPLE_QUESTIONS;
 
-=======
-// Unpack the list of simple questions into convenient constants
-const [ADDITION_QUESTION, LETTER_QUESTION, COLOR_QUESTION, SHAPE_QUESTION] =
-    SIMPLE_QUESTIONS;
->>>>>>> upstream/task-state
 const [
     BACKUP_ADDITION_QUESTION,
     BACKUP_LETTER_QUESTION,
     BACKUP_COLOR_QUESTION,
-<<<<<<< HEAD
     BACKUP_SHAPE_QUESTION,
-=======
-    BACKUP_SHAPE_QUESTION
->>>>>>> upstream/task-state
 ] = BACKUP_SIMPLE_QUESTIONS;
 
 ////////////////////////////////////////////
 // Actual tests
 
 describe("Testing the object functions", () => {
-<<<<<<< HEAD
     test("Testing the makeBlankQuestion function", () => {
         expect(
             makeBlankQuestion(1, "Question 1", "multiple_choice_question"),
@@ -86,25 +60,6 @@ describe("Testing the object functions", () => {
         ).toEqual(BLANK_QUESTIONS[2]);
     });
 
-=======
-    //////////////////////////////////
-    // makeBlankQuestion
-
-    test("Testing the makeBlankQuestion function", () => {
-        expect(
-            makeBlankQuestion(1, "Question 1", "multiple_choice_question")
-        ).toEqual(BLANK_QUESTIONS[0]);
-        expect(
-            makeBlankQuestion(47, "My New Question", "multiple_choice_question")
-        ).toEqual(BLANK_QUESTIONS[1]);
-        expect(
-            makeBlankQuestion(2, "Question 2", "short_answer_question")
-        ).toEqual(BLANK_QUESTIONS[2]);
-    });
-
-    ///////////////////////////////////
-    // isCorrect
->>>>>>> upstream/task-state
     test("Testing the isCorrect function", () => {
         expect(isCorrect(ADDITION_QUESTION, "4")).toEqual(true);
         expect(isCorrect(ADDITION_QUESTION, "2")).toEqual(false);
@@ -122,11 +77,6 @@ describe("Testing the object functions", () => {
         expect(isCorrect(SHAPE_QUESTION, "circle")).toEqual(true);
     });
 
-<<<<<<< HEAD
-=======
-    ///////////////////////////////////
-    // isValid
->>>>>>> upstream/task-state
     test("Testing the isValid function", () => {
         expect(isValid(ADDITION_QUESTION, "4")).toEqual(true);
         expect(isValid(ADDITION_QUESTION, "2")).toEqual(true);
@@ -148,11 +98,6 @@ describe("Testing the object functions", () => {
         expect(isValid(SHAPE_QUESTION, "rhombus")).toEqual(false);
     });
 
-<<<<<<< HEAD
-=======
-    ///////////////////////////////////
-    // toShortForm
->>>>>>> upstream/task-state
     test("Testing the toShortForm function", () => {
         expect(toShortForm(ADDITION_QUESTION)).toEqual("1: Addition");
         expect(toShortForm(LETTER_QUESTION)).toEqual("2: Letters");
@@ -161,7 +106,6 @@ describe("Testing the object functions", () => {
         expect(toShortForm(BLANK_QUESTIONS[1])).toEqual("47: My New Que");
     });
 
-<<<<<<< HEAD
     test("Testing the toMarkdown function", () => {
         expect(toMarkdown(ADDITION_QUESTION)).toEqual(`# Addition
 What is 2+2?`);
@@ -169,24 +113,11 @@ What is 2+2?`);
         expect(toMarkdown(LETTER_QUESTION)).toEqual(`# Letters
 What is the last letter of the English alphabet?`);
 
-=======
-    ///////////////////////////////////
-    // toMarkdown
-    test("Testing the toMarkdown function", () => {
-        expect(toMarkdown(ADDITION_QUESTION)).toEqual(`# Addition
-What is 2+2?`);
-        expect(toMarkdown(LETTER_QUESTION)).toEqual(`# Letters
-What is the last letter of the English alphabet?`);
->>>>>>> upstream/task-state
         expect(toMarkdown(COLOR_QUESTION)).toEqual(`# Colors
 Which of these is a color?
 - red
 - apple
 - firetruck`);
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/task-state
         expect(toMarkdown(SHAPE_QUESTION)).toEqual(`# Shapes
 What shape can you make with one line?
 - square
@@ -202,17 +133,9 @@ What shape can you make with one line?
         expect(BLANK_QUESTIONS).toEqual(BACKUP_BLANK_QUESTIONS);
     });
 
-<<<<<<< HEAD
     test("Testing the renameQuestion function", () => {
         expect(
             renameQuestion(ADDITION_QUESTION, "My Addition Question"),
-=======
-    ///////////////////////////////////
-    // renameQuestion
-    test("Testing the renameQuestion function", () => {
-        expect(
-            renameQuestion(ADDITION_QUESTION, "My Addition Question")
->>>>>>> upstream/task-state
         ).toEqual({
             id: 1,
             name: "My Addition Question",
@@ -221,18 +144,11 @@ What shape can you make with one line?
             options: [],
             expected: "4",
             points: 1,
-<<<<<<< HEAD
             published: true,
         });
 
         expect(
             renameQuestion(SHAPE_QUESTION, "I COMPLETELY CHANGED THIS NAME"),
-=======
-            published: true
-        });
-        expect(
-            renameQuestion(SHAPE_QUESTION, "I COMPLETELY CHANGED THIS NAME")
->>>>>>> upstream/task-state
         ).toEqual({
             id: 9,
             name: "I COMPLETELY CHANGED THIS NAME",
@@ -241,19 +157,10 @@ What shape can you make with one line?
             options: ["square", "triangle", "circle"],
             expected: "circle",
             points: 2,
-<<<<<<< HEAD
             published: false,
         });
     });
 
-=======
-            published: false
-        });
-    });
-
-    ///////////////////////////////////
-    // publishQuestion
->>>>>>> upstream/task-state
     test("Testing the publishQuestion function", () => {
         expect(publishQuestion(ADDITION_QUESTION)).toEqual({
             id: 1,
@@ -263,14 +170,9 @@ What shape can you make with one line?
             options: [],
             expected: "4",
             points: 1,
-<<<<<<< HEAD
             published: false,
         });
 
-=======
-            published: false
-        });
->>>>>>> upstream/task-state
         expect(publishQuestion(LETTER_QUESTION)).toEqual({
             id: 2,
             name: "Letters",
@@ -279,14 +181,9 @@ What shape can you make with one line?
             options: [],
             expected: "Z",
             points: 1,
-<<<<<<< HEAD
             published: true,
         });
 
-=======
-            published: true
-        });
->>>>>>> upstream/task-state
         expect(publishQuestion(publishQuestion(ADDITION_QUESTION))).toEqual({
             id: 1,
             name: "Addition",
@@ -295,19 +192,10 @@ What shape can you make with one line?
             options: [],
             expected: "4",
             points: 1,
-<<<<<<< HEAD
             published: true,
         });
     });
 
-=======
-            published: true
-        });
-    });
-
-    ///////////////////////////////////
-    // duplicateQuestion
->>>>>>> upstream/task-state
     test("Testing the duplicateQuestion function", () => {
         expect(duplicateQuestion(9, ADDITION_QUESTION)).toEqual({
             id: 9,
@@ -317,14 +205,9 @@ What shape can you make with one line?
             options: [],
             expected: "4",
             points: 1,
-<<<<<<< HEAD
             published: false,
         });
 
-=======
-            published: false
-        });
->>>>>>> upstream/task-state
         expect(duplicateQuestion(55, LETTER_QUESTION)).toEqual({
             id: 55,
             name: "Copy of Letters",
@@ -333,19 +216,10 @@ What shape can you make with one line?
             options: [],
             expected: "Z",
             points: 1,
-<<<<<<< HEAD
             published: false,
         });
     });
 
-=======
-            published: false
-        });
-    });
-
-    ///////////////////////////////////
-    // addOption
->>>>>>> upstream/task-state
     test("Testing the addOption function", () => {
         expect(addOption(SHAPE_QUESTION, "heptagon")).toEqual({
             id: 9,
@@ -355,14 +229,9 @@ What shape can you make with one line?
             options: ["square", "triangle", "circle", "heptagon"],
             expected: "circle",
             points: 2,
-<<<<<<< HEAD
             published: false,
         });
 
-=======
-            published: false
-        });
->>>>>>> upstream/task-state
         expect(addOption(COLOR_QUESTION, "squiggles")).toEqual({
             id: 5,
             name: "Colors",
@@ -371,32 +240,18 @@ What shape can you make with one line?
             options: ["red", "apple", "firetruck", "squiggles"],
             expected: "red",
             points: 1,
-<<<<<<< HEAD
             published: true,
         });
     });
 
-=======
-            published: true
-        });
-    });
-
-    ///////////////////////////////////
-    // mergeQuestion
->>>>>>> upstream/task-state
     test("Testing the mergeQuestion function", () => {
         expect(
             mergeQuestion(
                 192,
                 "More Points Addition",
                 ADDITION_QUESTION,
-<<<<<<< HEAD
                 SHAPE_QUESTION,
             ),
-=======
-                SHAPE_QUESTION
-            )
->>>>>>> upstream/task-state
         ).toEqual({
             id: 192,
             name: "More Points Addition",
@@ -405,11 +260,7 @@ What shape can you make with one line?
             options: [],
             expected: "4",
             points: 2,
-<<<<<<< HEAD
             published: false,
-=======
-            published: false
->>>>>>> upstream/task-state
         });
 
         expect(
@@ -417,13 +268,8 @@ What shape can you make with one line?
                 99,
                 "Less Points Shape",
                 SHAPE_QUESTION,
-<<<<<<< HEAD
                 ADDITION_QUESTION,
             ),
-=======
-                ADDITION_QUESTION
-            )
->>>>>>> upstream/task-state
         ).toEqual({
             id: 99,
             name: "Less Points Shape",
@@ -432,11 +278,7 @@ What shape can you make with one line?
             options: ["square", "triangle", "circle"],
             expected: "circle",
             points: 1,
-<<<<<<< HEAD
             published: false,
-=======
-            published: false
->>>>>>> upstream/task-state
         });
     });
 });
