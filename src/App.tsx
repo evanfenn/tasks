@@ -9,7 +9,8 @@ import "./App.css";
 // import { StartAttempt } from "./components/StartAttempt";
 // import { TwoDice } from "./components/TwoDice";
 // import { CycleHoliday } from "./components/CycleHoliday";
-// import { Counter } from "./components/Counter";
+ import { Counter } from "./components/Counter";
+import { RevealAnswer } from "./components/RevealAnswer";
 
 function App(): React.JSX.Element {
     return (
@@ -20,6 +21,10 @@ function App(): React.JSX.Element {
                     TypeScript
                 </h1>
             </header>
+            <hr></hr>
+            <Counter></Counter>
+            <RevealAnswer></RevealAnswer>
+            <hr />
 
             {/* <p>
                 Edit <code>src/App.tsx</code> and save. This page will
