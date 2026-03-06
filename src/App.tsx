@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
-import udelbluehen from "./images/udelbluehen.png";
-import Button from "react-bootstrap/Button";
-import { Container, Row, Col } from "react-bootstrap";
+// import udelbluehen from "./images/udelbluehen.png";
+// import Button from "react-bootstrap/Button";
+// import { Container, Row, Col } from "react-bootstrap";
 
-import { ChangeType } from "./components/ChangeType";
-import { RevealAnswer } from "./components/RevealAnswer";
-import { StartAttempt } from "./components/StartAttempt";
-import { TwoDice } from "./components/TwoDice";
-import { CycleHoliday } from "./components/CycleHoliday";
-import { Counter } from "./components/Counter";
+// import { ChangeType } from "./components/ChangeType";
+// import { RevealAnswer } from "./components/RevealAnswer";
+// import { StartAttempt } from "./components/StartAttempt";
+// import { TwoDice } from "./components/TwoDice";
+// import { CycleHoliday } from "./components/CycleHoliday";
+// import { Counter } from "./components/Counter";
 
 function App(): React.JSX.Element {
     return (
@@ -21,7 +21,7 @@ function App(): React.JSX.Element {
                 </h1>
             </header>
 
-            <p>
+            {/* <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
@@ -84,7 +84,7 @@ function App(): React.JSX.Element {
             <hr />
             <ChangeType />
             <hr />
-            <CycleHoliday />
+            <CycleHoliday /> */}
         </div>
     );
 }
