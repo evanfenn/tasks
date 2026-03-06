@@ -1,8 +1,17 @@
 import React from "react";
 import "./App.css";
+<<<<<<< HEAD
 import udelbluehen from "./images/udelbluehen.png";
 import Button from "react-bootstrap/Button";
 import {Container, Row, Col} from "react-bootstrap";
+=======
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
+>>>>>>> upstream/task-state
 
 function App(): React.JSX.Element {
     return (
@@ -12,6 +21,7 @@ function App(): React.JSX.Element {
                 Hello World Evan Fennemore UD CISC275 with React Hooks and TypeScript
                 </h1>
             </header>
+<<<<<<< HEAD
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
@@ -34,6 +44,21 @@ function App(): React.JSX.Element {
                     </Row>
                 </Container>
             </div>
+=======
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
+        </div>
+>>>>>>> upstream/task-state
     );
 }
 
