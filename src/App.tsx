@@ -1,16 +1,15 @@
 import React from "react";
 import "./App.css";
-// import udelbluehen from "./images/udelbluehen.png";
-// import Button from "react-bootstrap/Button";
-// import { Container, Row, Col } from "react-bootstrap";
+import udelbluehen from "./images/udelbluehen.png";
+import Button from "react-bootstrap/Button";
+import { Container, Row, Col } from "react-bootstrap";
 
  import { ChangeType } from "./components/ChangeType";
-// import { RevealAnswer } from "./components/RevealAnswer";
+import { RevealAnswer } from "./components/RevealAnswer";
  import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
-// import { CycleHoliday } from "./components/CycleHoliday";
+ import { CycleHoliday } from "./components/CycleHoliday";
  import { Counter } from "./components/Counter";
-import { RevealAnswer } from "./components/RevealAnswer";
 
 function App(): React.JSX.Element {
     return (
@@ -28,7 +27,7 @@ function App(): React.JSX.Element {
                 automatically reload.
             </p>
 
-            {/* <Container>
+            <Container>
                 <Row>
                     <Col
                         style={{
@@ -73,7 +72,7 @@ function App(): React.JSX.Element {
                         />
                     </Col>
                 </Row>
-            </Container> */}
+            </Container>
 
             <hr />
             <Counter />
@@ -85,8 +84,8 @@ function App(): React.JSX.Element {
             <TwoDice />
             <hr />
             <ChangeType />
-            {/* <hr />
-            <CycleHoliday /> */}
+            <hr />
+            <CycleHoliday />
         </div>
     );
 }
