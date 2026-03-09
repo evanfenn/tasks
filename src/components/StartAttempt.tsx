@@ -7,7 +7,11 @@ export function StartAttempt(): React.JSX.Element {
 
     function startQuiz() {
         setInProgress(true);
-        setAttempts((prev) => Math.max(prev - 1, 0));
+        setAttempts(prev => {
+            const values: number[] = [prev - 1, 0];
+            const newAttempts = values.reduce((a,b) => a > b ? a:b);
+            return newAttempts;
+        });
     }
 
     function stopQuiz() {
