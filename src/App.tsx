@@ -4,7 +4,7 @@ import "./App.css";
 // import Button from "react-bootstrap/Button";
 // import { Container, Row, Col } from "react-bootstrap";
 
-// import { ChangeType } from "./components/ChangeType";
+ import { ChangeType } from "./components/ChangeType";
 // import { RevealAnswer } from "./components/RevealAnswer";
 // import { StartAttempt } from "./components/StartAttempt";
 // import { TwoDice } from "./components/TwoDice";
@@ -22,16 +22,13 @@ function App(): React.JSX.Element {
                 </h1>
             </header>
             <hr></hr>
-            <Counter></Counter>
-            <RevealAnswer></RevealAnswer>
             <hr />
-
-            {/* <p>
+            <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
 
-            <Container>
+            {/* <Container>
                 <Row>
                     <Col
                         style={{
@@ -76,19 +73,19 @@ function App(): React.JSX.Element {
                         />
                     </Col>
                 </Row>
-            </Container>
+            </Container> */}
 
             <hr />
             <Counter />
             <hr />
             <RevealAnswer />
-            <hr />
+            {/* <hr />
             <StartAttempt />
             <hr />
-            <TwoDice />
+            <TwoDice /> */}
             <hr />
             <ChangeType />
-            <hr />
+            {/* <hr />
             <CycleHoliday /> */}
         </div>
     );
