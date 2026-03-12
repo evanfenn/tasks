@@ -9,11 +9,10 @@ export function EditMode(): React.JSX.Element {
         <div>
             <h3>Edit Mode</h3>
 
-            <label>
+            <label className="form-switch">
                 Edit Mode 
                 <input
                     type="checkbox"
-                    role="switch"
                     checked={editMode}
                     onChange={(event)=> {setEditMode(event.target.checked)}}
                 />
