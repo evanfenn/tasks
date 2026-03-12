@@ -1,40 +1,53 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { dhValue, setDhValue } from "./DoubleHalfState";
-
-function Doubler(): React.JSX.Element {
+function Doubler({
+    dhValue,
+    setDhValue,
+}: {
+    dhValue: number;
+    setDhValue: (v: number) => void;
+}): React.JSX.Element {
     return (
         <Button
             onClick={() => {
                 setDhValue(2 * dhValue);
             }}
         >
-            Double
+            {" "}
+            Double{" "}
         </Button>
     );
 }
-
-function Halver(): React.JSX.Element {
+function Halver({
+    dhValue,
+    setDhValue,
+}: {
+    dhValue: number;
+    setDhValue: (v: number) => void;
+}): React.JSX.Element {
     return (
         <Button
             onClick={() => {
                 setDhValue(0.5 * dhValue);
             }}
         >
-            Halve
+            {" "}
+            Halve{" "}
         </Button>
     );
 }
-
 export function DoubleHalf(): React.JSX.Element {
+    const [dhValue, setDhValue] = useState<number>(10);
     return (
         <div>
-            <h3>Double Half</h3>
+            {" "}
+            <h3>Double Half</h3>{" "}
             <div>
-                The current value is: <span>{dhValue}</span>
-            </div>
-            <Doubler></Doubler>
-            <Halver></Halver>
+                {" "}
+                The current value is: <span>{dhValue}</span>{" "}
+            </div>{" "}
+            <Doubler dhValue={dhValue} setDhValue={setDhValue}></Doubler>{" "}
+            <Halver dhValue={dhValue} setDhValue={setDhValue}></Halver>{" "}
         </div>
     );
 }
