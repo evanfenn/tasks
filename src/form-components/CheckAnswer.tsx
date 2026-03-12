@@ -14,7 +14,7 @@ export function CheckAnswer({
             <input
                 type="text"
                 value={userAnswer}
-                onChange={(event) => setUserAnswer(event.target.value)}
+                onChange={(event) => {setUserAnswer(event.target.value)}}
             />
 
             <span>{userAnswer === expectedAnswer ? "✔️" : "❌"}</span>
